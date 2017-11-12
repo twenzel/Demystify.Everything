@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>logging exception demystify Ben.Demystifier log4net</PackageTags>
+    <Version>0.1.0</Version>
+    <Authors>Toni Wenzel</Authors>
+    <Description>Extension to the log4net library to demystify exceptions (using Ben.Demystifier). If using log4net as provider within Microsoft.Extensions.Logging library, please use codeessentials.Extensions.Logging.Demystifier package instead.</Description>
+    <Copyright>Copyright © Toni Wenzel</Copyright>
+    <PackageId>codeessentials.log4net.Demystifier</PackageId>
+    <Product>codeessentials.log4net.Demystifier</Product>
+    <PackageProjectUrl>https://github.com/twenzel/Demystify.Everything</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/twenzel/Demystify.Everything/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/twenzel/Demystify.Everything</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ben.Demystifier" Version="0.0.3" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+  </ItemGroup>
+
+</Project>

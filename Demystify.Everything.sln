@@ -11,7 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{B0B6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "codeessentials.Extensions.Logging.Demystifier", "src\codeessentials.Extensions.Logging.Demystifier\codeessentials.Extensions.Logging.Demystifier.csproj", "{E1AC8A55-1998-4E14-9B32-6D461B7DEAFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Logging.Sample", "samples\Extensions.Logging.Sample\Extensions.Logging.Sample.csproj", "{80DBEEC0-3CFE-4C7A-831B-8EC97B642205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Logging.Sample", "samples\Extensions.Logging.Sample\Extensions.Logging.Sample.csproj", "{80DBEEC0-3CFE-4C7A-831B-8EC97B642205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeessentials.log4net.Demystifyer.Sample", "samples\log4net.Demystifyer.Sample\log4net.Demystifyer.Sample.csproj", "{6AB710E3-B053-43CB-8901-52E702A2593F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeessentials.log4net.Demystifier", "src\codeessentials.log4net.Demystifier\codeessentials.log4net.Demystifier.csproj", "{65D674C3-32FF-403C-BC94-E32332878164}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{80DBEEC0-3CFE-4C7A-831B-8EC97B642205}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80DBEEC0-3CFE-4C7A-831B-8EC97B642205}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80DBEEC0-3CFE-4C7A-831B-8EC97B642205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB710E3-B053-43CB-8901-52E702A2593F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB710E3-B053-43CB-8901-52E702A2593F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB710E3-B053-43CB-8901-52E702A2593F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB710E3-B053-43CB-8901-52E702A2593F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65D674C3-32FF-403C-BC94-E32332878164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D674C3-32FF-403C-BC94-E32332878164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D674C3-32FF-403C-BC94-E32332878164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D674C3-32FF-403C-BC94-E32332878164}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{39B1444E-C506-49EA-B38B-C9B9E6CDF1C7} = {B0B62F7F-866A-4463-B1AE-38A28D410BF5}
 		{80DBEEC0-3CFE-4C7A-831B-8EC97B642205} = {B0B62F7F-866A-4463-B1AE-38A28D410BF5}
+		{6AB710E3-B053-43CB-8901-52E702A2593F} = {B0B62F7F-866A-4463-B1AE-38A28D410BF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB8A5875-D053-4469-81DC-3D43680E3166}
