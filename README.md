@@ -4,9 +4,9 @@
 Extensions for various systems in order to demystify exceptions using [Ben.Demystify](https://github.com/benaadams/Ben.Demystifier)
 
 Current extensions:
-* [codeessentials.Extensions.Logging.Demystifier](#codeessentials.Extensions.Logging.Demystifier)
-* [codeessentials.AspNetCore.Diagnostics.Demystifier](#codeessentials.AspNetCore.Diagnostics.Demystifier)
-* [codeessentials.log4net.Demystifier](#codeessentials.log4net.Demystifier)
+* [codeessentials.Extensions.Logging.Demystifier](#codeessentialsextensionsloggingdemystifier)
+* [codeessentials.AspNetCore.Diagnostics.Demystifier](#codeessentialsaspnetcorediagnosticsdemystifier)
+* [codeessentials.log4net.Demystifier](#codeessentialslog4netdemystifier)
 
 ## codeessentials.Extensions.Logging.Demystifier
 [![NuGet](https://img.shields.io/nuget/v/codeessentials.Extensions.Logging.Demystifier.svg)](https://nuget.org/packages/codeessentials.Extensions.Logging.Demystifier/)
