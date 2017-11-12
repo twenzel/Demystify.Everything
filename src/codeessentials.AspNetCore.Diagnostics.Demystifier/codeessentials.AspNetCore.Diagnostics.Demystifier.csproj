@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>codeessentials.AspNetCore.Diagnostics.Demystifier</AssemblyName>
+    <RootNamespace>codeessentials.AspNetCore.Diagnostics.Demystifier</RootNamespace>
+    <PackageTags>asp.net core exception demystify Ben.Demystifier</PackageTags>
+    <Version>0.1.0</Version>
+    <Authors>Toni Wenzel</Authors>
+    <Description>Middleware for the ASP.NET Core Diagostic system to demystify exceptions (using Ben.Demystifier)</Description>
+    <Copyright>Copyright © Toni Wenzel</Copyright>
+    <PackageId>codeessentials.AspNetCore.Diagnostics.Demystifier</PackageId>
+    <Product>codeessentials.AspNetCore.Diagnostics.Demystifier</Product>
+    <PackageProjectUrl>https://github.com/twenzel/Demystify.Everything</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/twenzel/Demystify.Everything/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/twenzel/Demystify.Everything</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ben.Demystifier" Version="0.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>

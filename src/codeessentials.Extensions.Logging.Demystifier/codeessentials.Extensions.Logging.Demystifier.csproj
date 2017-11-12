@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>logging exception demystify Ben.Demystifier</PackageTags>
+    <Version>0.1.0</Version>
+    <Authors>Toni Wenzel</Authors>
+    <Description>Extension to the logging framework to demystify exceptions (using Ben.Demystifier) prior logging</Description>
+    <Copyright>Copyright © Toni Wenzel</Copyright>
+    <PackageId>codeessentials.Extensions.Logging.Demystifier</PackageId>
+    <Product>codeessentials.Extensions.Logging.Demystifier</Product>
+    <PackageProjectUrl>https://github.com/twenzel/Demystify.Everything</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/twenzel/Demystify.Everything/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/twenzel/Demystify.Everything</RepositoryUrl>        
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ben.Demystifier" Version="0.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>
