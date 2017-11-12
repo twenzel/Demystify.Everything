@@ -27,7 +27,7 @@ build_script:
 test: off
 
 artifacts:
-  - path: src\bin\release\*.nupkg
+  - path: src\**\release\*.nupkg
     name: NuGet package
 
 deploy:

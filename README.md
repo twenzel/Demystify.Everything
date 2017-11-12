@@ -8,14 +8,14 @@ Extensions for various systems in order to demystify exceptions using [Ben.Demys
 Extension to the Microsoft.Extensions.Logging framework to demystify exceptions prior logging.
 
 #### Usage
-For ASP.NET Core applications simply call the `AddExceptionDemystifyer` in `ConfigureServices`:
+For ASP.NET Core applications simply call the `AddExceptionDemystifyer()` in `ConfigureServices`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
     services.AddExceptionDemystifyer();
-	...
+    ...
 }
 ```
 
@@ -29,10 +29,10 @@ var logger = factory.CreateLogger("Test");
 
 try
 {
-	new SampleExceptionGenerator();
+    new SampleExceptionGenerator();
 } catch(Exception ex)
 {
-	logger.LogError(ex, "While trying to test");
+    logger.LogError(ex, "While trying to test");
 }
 
 Console.ReadKey();
@@ -48,20 +48,20 @@ Just add the `UseExceptionDemystifier()` call in the `Configure` method to demys
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory factory)
 {
-	...
+    ...
 
-	if (env.IsDevelopment())
-	{                
-		app.UseDeveloperExceptionPage();
-		app.UseDatabaseErrorPage();
-		app.UseExceptionDemystifier();
-		app.UseBrowserLink();
-	}
-	else
-	{
-		...
-	}
+    if (env.IsDevelopment())
+    {                
+        app.UseDeveloperExceptionPage();
+        app.UseDatabaseErrorPage();
+        app.UseExceptionDemystifier();
+        app.UseBrowserLink();
+    }
+    else
+    {
+        ...
+    }
 
-	...
+    ...
 }
 ```
