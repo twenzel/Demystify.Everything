@@ -4,12 +4,12 @@ version: 0.1.{build}
 branches:
   only:
     - master
-	
+
 skip_commits:
   files:
   - LICENCE
-  - README.md
-	
+  - README.md  
+
 install:
    # .NET Core SDK binaries
   - ps: $urlCurrent = "https://aka.ms/dotnet-sdk-2.0.0-win-x64"
