@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace log4net.Demystifyer.Sample
         static void Main(string[] args)
         {
             // Set up a simple configuration that logs on the console.
-            BasicConfigurator.Configure();
+            BasicConfigurator.Configure(LogManager.GetRepository(Assembly.GetCallingAssembly()));
 
             // Inject demystifier
             LoggerExtensions.AddExceptionDemystifier();
