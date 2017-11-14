@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Logging.Sample",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "codeessentials.log4net.Demystifier", "src\codeessentials.log4net.Demystifier\codeessentials.log4net.Demystifier.csproj", "{65D674C3-32FF-403C-BC94-E32332878164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.Demystifyer.Sample", "samples\log4net.Demystifyer.Sample\log4net.Demystifyer.Sample.csproj", "{AD8652A0-17B3-4701-AE52-F73E8E9C2DDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net.Demystifyer.Sample", "samples\log4net.Demystifyer.Sample\log4net.Demystifyer.Sample.csproj", "{AD8652A0-17B3-4701-AE52-F73E8E9C2DDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9ECC8B7F-6B43-428D-AC15-4DA571C92CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeessentials.Extensions.Logging.Demystifier.Tests", "tests\codeessentials.Extensions.Logging.Demystifier.Tests\codeessentials.Extensions.Logging.Demystifier.Tests.csproj", "{A7C8D4F3-3048-4F28-8304-1063A050484A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,10 @@ Global
 		{AD8652A0-17B3-4701-AE52-F73E8E9C2DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD8652A0-17B3-4701-AE52-F73E8E9C2DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD8652A0-17B3-4701-AE52-F73E8E9C2DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C8D4F3-3048-4F28-8304-1063A050484A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C8D4F3-3048-4F28-8304-1063A050484A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C8D4F3-3048-4F28-8304-1063A050484A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C8D4F3-3048-4F28-8304-1063A050484A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{39B1444E-C506-49EA-B38B-C9B9E6CDF1C7} = {B0B62F7F-866A-4463-B1AE-38A28D410BF5}
 		{80DBEEC0-3CFE-4C7A-831B-8EC97B642205} = {B0B62F7F-866A-4463-B1AE-38A28D410BF5}
 		{AD8652A0-17B3-4701-AE52-F73E8E9C2DDE} = {B0B62F7F-866A-4463-B1AE-38A28D410BF5}
+		{A7C8D4F3-3048-4F28-8304-1063A050484A} = {9ECC8B7F-6B43-428D-AC15-4DA571C92CA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB8A5875-D053-4469-81DC-3D43680E3166}

@@ -41,7 +41,7 @@ namespace codeessentials.Extensions.Logging.Demystifier
         /// </returns>
         public ILogger CreateLogger(string categoryName)
         {
-            return new LoggerEnhancement(_inner.CreateLogger(categoryName));
+            return new LoggerWrapper(_inner.CreateLogger(categoryName));
         }
 
         /// <summary>

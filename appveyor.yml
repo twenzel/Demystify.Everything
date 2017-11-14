@@ -24,8 +24,9 @@ install:
 build_script:
   - dotnet restore -v quiet
   - ps: dotnet build /p:configuration=Release /p:Version=$($env:appveyor_build_version)
-
-test: off
+  
+test_script:
+- dotnet test "tests\codeessentials.Extensions.Logging.Demystifier.Tests" -c Release
 
 artifacts:
   - path: src\**\release\*.nupkg

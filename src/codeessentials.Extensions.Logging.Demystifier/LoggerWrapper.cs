@@ -10,16 +10,16 @@ namespace codeessentials.Extensions.Logging.Demystifier
     /// Wrapper to the original Logger implementation to wrap the exception instance
     /// </summary>
     /// <seealso cref="Microsoft.Extensions.Logging.ILogger" />
-    public class LoggerEnhancement : ILogger
+    public class LoggerWrapper : ILogger
     {
         private readonly ILogger _inner;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoggerEnhancement"/> class.
+        /// Initializes a new instance of the <see cref="LoggerWrapper"/> class.
         /// </summary>
         /// <param name="innerLogger">The inner logger.</param>
         /// <exception cref="ArgumentNullException">innerLogger</exception>
-        public LoggerEnhancement(ILogger innerLogger)
+        public LoggerWrapper(ILogger innerLogger)
         {
             _inner = innerLogger ?? throw new ArgumentNullException(nameof(innerLogger));
         }
