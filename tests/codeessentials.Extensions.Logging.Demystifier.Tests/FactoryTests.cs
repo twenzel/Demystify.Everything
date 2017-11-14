@@ -24,7 +24,7 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
 
             var logger = factory.CreateLogger("Test");
 
-            Assert.IsType<codeessentials.Extensions.Logging.Demystifier.LoggerEnhancement>(logger);
+            Assert.IsType<codeessentials.Extensions.Logging.Demystifier.LoggerWrapper>(logger);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
 
             var logger = factory.CreateLogger<TestClass>();
 
-            Assert.IsType<codeessentials.Extensions.Logging.Demystifier.LoggerEnhancement>(logger);
+            Assert.IsType<codeessentials.Extensions.Logging.Demystifier.LoggerWrapper>(logger);
         }
     }
 
