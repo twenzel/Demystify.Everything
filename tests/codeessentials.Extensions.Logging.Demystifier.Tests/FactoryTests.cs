@@ -35,7 +35,13 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
 
             var logger = factory.CreateLogger<TestClass>();
 
-            Assert.IsType<codeessentials.Extensions.Logging.Demystifier.LoggerWrapper>(logger);
+            Assert.IsType<Logger<TestClass>>(logger);
+            var outerLogger = (Logger<TestClass>)logger;
+
+            var field = outerLogger.GetType().GetField("_logger", System.Reflection.BindingFlags.GetField | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            var innerLogger = field.GetValue(outerLogger);
+
+            Assert.IsType<codeessentials.Extensions.Logging.Demystifier.LoggerWrapper>(innerLogger);
         }
     }
 

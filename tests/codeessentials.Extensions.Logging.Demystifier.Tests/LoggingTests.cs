@@ -29,8 +29,11 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
             Assert.Single(testSink.Writes);
             var stacktrace = testSink.Writes[0].Exception.ToString();
 
-            Assert.Contains("at ref string SampleExceptionGenerator", stacktrace);
-            Assert.Contains("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
+            Assert.Contains("--- End of inner exception stack trace ---", stacktrace);
+            Assert.Contains("SampleExceptionGenerator.<>c__DisplayClass", stacktrace);
+
+            Assert.DoesNotContain("at ref string SampleExceptionGenerator", stacktrace);
+            Assert.DoesNotContain("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
         }
 
         [Fact]

@@ -16,9 +16,9 @@ namespace Microsoft.Extensions.Logging.Testing
             _enabled = enabled;
         }
 
-        public ILogger CreateLogger(string name)
+        public ILogger CreateLogger(string categoryName)
         {
-            return new TestLogger(name, _sink, _enabled);
+            return new TestLogger(categoryName, _sink, _enabled);
         }
 
         public void AddProvider(ILoggerProvider provider)
