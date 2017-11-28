@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,8 +30,8 @@ namespace codeessentials.AspNetCore.Diagnostics.Demystifier
             {
                 Exception exception = null;
                 try
-                {                    
-                    exception = ex.Demystify();                    
+                {
+                    exception = ex.Demystify();
                 }
                 catch (Exception ex2)
                 {
@@ -39,8 +40,8 @@ namespace codeessentials.AspNetCore.Diagnostics.Demystifier
                 }
 
                 if (exception != null)
-                    throw exception;
-                else                
+                    ExceptionDispatchInfo.Capture(exception).Throw();
+                else
                     throw; // re -throw the original exception
             }
         }
