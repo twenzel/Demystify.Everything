@@ -56,7 +56,7 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
             Assert.Single(testSink.Writes);
 
             var stacktrace = testSink.Writes[0].Exception.ToString();
-            Assert.Contains("at ref string SampleExceptionGenerator", stacktrace);
+            Assert.Contains("at string SampleExceptionGenerator", stacktrace);
             Assert.Contains("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
         }
 
@@ -80,7 +80,7 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
             Assert.Single(testSink.Writes);
 
             var stacktrace = testSink.Writes[0].Exception.ToString();
-            Assert.Contains("at ref string SampleExceptionGenerator", stacktrace);
+            Assert.Contains("at string SampleExceptionGenerator", stacktrace);
             Assert.Contains("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
         }
     }
