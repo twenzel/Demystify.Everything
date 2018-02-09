@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Testing;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics;
 using Xunit;
 
 namespace codeessentials.Extensions.Logging.Demystifier.Tests
@@ -17,6 +16,8 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
 
             var logger = factory.CreateLogger("Test");
 
+            Exception thrownException = null;
+
             try
             {
                 new SampleExceptionGenerator();
@@ -24,16 +25,13 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
             catch (Exception ex)
             {
                 logger.LogError(ex, "While trying to test");
+                thrownException = ex;
             }
 
             Assert.Single(testSink.Writes);
             var stacktrace = testSink.Writes[0].Exception.ToString();
 
-            Assert.Contains("--- End of inner exception stack trace ---", stacktrace);
-            Assert.Contains("SampleExceptionGenerator.<>c__DisplayClass", stacktrace);
-
-            Assert.DoesNotContain("at ref string SampleExceptionGenerator", stacktrace);
-            Assert.DoesNotContain("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
+            Assert.Equal(thrownException.ToString(), stacktrace);
         }
 
         [Fact]
@@ -44,6 +42,8 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
 
             var logger = factory.CreateLogger("Test");
 
+            Exception thrownException = null;
+
             try
             {
                 new SampleExceptionGenerator();
@@ -51,13 +51,14 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
             catch (Exception ex)
             {
                 logger.LogError(ex, "While trying to test");
+                thrownException = ex;
             }
 
             Assert.Single(testSink.Writes);
 
             var stacktrace = testSink.Writes[0].Exception.ToString();
-            Assert.Contains("at string SampleExceptionGenerator", stacktrace);
-            Assert.Contains("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
+
+            Assert.Equal(thrownException.Demystify().ToString(), stacktrace);
         }
 
         [Fact]
@@ -68,6 +69,8 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
 
             var logger = factory.CreateLogger<TestClass>();
 
+            Exception thrownException = null;
+
             try
             {
                 new SampleExceptionGenerator();
@@ -75,13 +78,13 @@ namespace codeessentials.Extensions.Logging.Demystifier.Tests
             catch (Exception ex)
             {
                 logger.LogError(ex, "While trying to test");
+                thrownException = ex;
             }
 
             Assert.Single(testSink.Writes);
 
             var stacktrace = testSink.Writes[0].Exception.ToString();
-            Assert.Contains("at string SampleExceptionGenerator", stacktrace);
-            Assert.Contains("at SampleExceptionGenerator(Action action)+()=>{}", stacktrace);
+            Assert.Equal(thrownException.Demystify().ToString(), stacktrace);
         }
     }
 }
