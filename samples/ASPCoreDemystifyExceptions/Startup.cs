@@ -23,13 +23,14 @@ namespace ASPCoreDemystifyExceptions
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddExceptionDemystifyer();
+           // services.AddExceptionDemystifyer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory factory)
         {
-            factory.AddDebug();
+            //factory.AddDebug();
+            //factory.AddConsole();
 
             if (env.IsDevelopment())
             {                

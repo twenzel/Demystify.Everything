@@ -14,7 +14,7 @@ Current extensions:
 Extension to the Microsoft.Extensions.Logging framework to demystify exceptions prior logging.
 
 #### Usage
-For ASP.NET Core applications simply call the `AddExceptionDemystifyer()` in `ConfigureServices`:
+For ASP.NET Core applications (old style) simply call the `AddExceptionDemystifyer()` in `ConfigureServices`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -23,6 +23,22 @@ public void ConfigureServices(IServiceCollection services)
     services.AddExceptionDemystifyer();
     ...
 }
+```
+
+For ASP.NET Core applications using the new style simply call the `AddExceptionDemystifyer()` in `ConfigureLogging`:
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+    .ConfigureLogging((context, builder) =>
+    {
+        builder.AddConfiguration(context.Configuration.GetSection("Logging"))
+            .AddConsole()
+            .AddDebug()
+            .AddExceptionDemystifyer();
+    })
+    .UseStartup<Startup>()
+    .Build();
 ```
 
 Or when using the logging framework elsewhere, just extend the LoggerFactory with `DemystifyExceptions()`:

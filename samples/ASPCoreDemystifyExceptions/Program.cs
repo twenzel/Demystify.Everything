@@ -19,6 +19,15 @@ namespace ASPCoreDemystifyExceptions
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .ConfigureLogging((context, builder) =>
+            {
+                builder                    
+                    .AddConfiguration(context.Configuration.GetSection("Logging"))
+                    .AddConsole()
+                    .AddDebug()
+                    .AddExceptionDemystifyer()
+                    ;
+            })
                 .UseStartup<Startup>()
                 .Build();
     }

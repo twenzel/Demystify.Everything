@@ -15,18 +15,11 @@ namespace ASPCoreDemystifyExceptions.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Test()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Test page";
 
             new SampleExceptionGenerator();
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
             return View();
         }
