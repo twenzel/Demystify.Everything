@@ -15,12 +15,17 @@
     <PackageLicenseUrl>https://github.com/twenzel/Demystify.Everything/blob/master/LICENSE.txt</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/twenzel/Demystify.Everything</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Ben.Demystifier" Version="0.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All"/>
   </ItemGroup>
 
 </Project>
