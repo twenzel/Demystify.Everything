@@ -14,6 +14,6 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.Decorate<ILoggerFactory, LoggerFactoryWrapper>();
             return services;
-        }       
+        }
     }
 }

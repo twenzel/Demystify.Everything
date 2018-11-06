@@ -87,8 +87,8 @@ namespace Microsoft.Extensions.DependencyInjection
         }
 
         private static object GetServiceOrCreateInstance(this IServiceProvider provider, Type type)
-        {            
-            return provider.GetService(type) ?? CreateInstanceByBestMatchedConstructor(provider, type);           
+        {
+            return provider.GetService(type) ?? CreateInstanceByBestMatchedConstructor(provider, type);
         }
 
         private static object CreateInstance(this IServiceProvider provider, Type instanceType, object decoratedInstance)
@@ -109,11 +109,11 @@ namespace Microsoft.Extensions.DependencyInjection
                     .Select(constructor => new ConstructorMatcher(constructor, givenParameter)).OrderByDescending(m => m.ParameterCount);
 
             foreach (var matcher in constructors)
-            {               
+            {
                 var instance = matcher.CreateInstance(provider);
-                    
+
                 if (instance != null)
-                    return instance;               
+                    return instance;
             }
 
             // No matching constructor found so far, use default creation logic
@@ -122,7 +122,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static bool TryGetDescriptors(this IServiceCollection services, Type serviceType, out ICollection<ServiceDescriptor> descriptors)
         {
-            return (descriptors = services.Where(service => service.ServiceType == serviceType).ToArray()).Any();
-        }        
+            return (descriptors = services.Where(service => service.ServiceType == serviceType).ToArray()).Count > 0;
+        }
     }
 }

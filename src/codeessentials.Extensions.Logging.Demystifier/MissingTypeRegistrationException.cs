@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace codeessentials.Extensions.Logging.Demystifier
 {
@@ -13,7 +11,21 @@ namespace codeessentials.Extensions.Logging.Demystifier
         {
             ServiceType = serviceType;
         }
+
+        public MissingTypeRegistrationException() : base()
+        {
+        }
+
+        public MissingTypeRegistrationException(string message) : base(message)
+        {
+        }
+
+        public MissingTypeRegistrationException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
         public Type ServiceType { get; }
+
         private static string GetFriendlyName(Type type)
         {
             if (type == typeof(int)) return "int";
@@ -31,6 +43,7 @@ namespace codeessentials.Extensions.Logging.Demystifier
             if (typeInfo.IsGenericType) return GetGenericFriendlyName(typeInfo);
             return type.Name;
         }
+
         private static string GetGenericFriendlyName(TypeInfo typeInfo)
         {
             var argumentNames = typeInfo.GenericTypeArguments.Select(GetFriendlyName).ToArray();

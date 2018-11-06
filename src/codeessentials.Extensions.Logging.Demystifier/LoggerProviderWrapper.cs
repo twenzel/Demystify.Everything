@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace codeessentials.Extensions.Logging.Demystifier
 {
-    public class LoggerProviderWrapper :ILoggerProvider
+    public class LoggerProviderWrapper : ILoggerProvider
     {
         private readonly ILoggerProvider _inner;
 
@@ -21,7 +18,7 @@ namespace codeessentials.Extensions.Logging.Demystifier
 
         public void Dispose()
         {
-            
+
         }
     }
 }

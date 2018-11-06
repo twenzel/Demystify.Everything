@@ -14,10 +14,9 @@ namespace codeessentials.Extensions.Logging.Demystifier
         private readonly ParameterInfo[] _parameters;
         private readonly object[] _parameterValues;
         private readonly bool[] _parameterValuesSet;
-        private readonly bool _givenParametersMatched;
 
         public int ParameterCount { get => _parameters.Length; }
-        public bool GivenParametersMatched { get => _givenParametersMatched; }
+        public bool GivenParametersMatched { get; }
 
         public ConstructorMatcher(ConstructorInfo constructor)
         {
@@ -30,9 +29,9 @@ namespace codeessentials.Extensions.Logging.Demystifier
         public ConstructorMatcher(ConstructorInfo constructor, params object[] givenParameters)
             : this(constructor)
         {
-            _givenParametersMatched = SetGivenParameters(givenParameters);
+            GivenParametersMatched = SetGivenParameters(givenParameters);
         }
-        
+
         /// <summary>
         /// Sets the given parameters to the internal list
         /// </summary>
@@ -124,10 +123,10 @@ namespace codeessentials.Extensions.Logging.Demystifier
             if (hasDefaultValue)
             {
                 if (flag)
-                    defaultValue = parameter.DefaultValue;                
+                    defaultValue = parameter.DefaultValue;
 
-                if (defaultValue == null && parameter.ParameterType.IsValueType)                
-                    defaultValue = Activator.CreateInstance(parameter.ParameterType);                
+                if (defaultValue == null && parameter.ParameterType.IsValueType)
+                    defaultValue = Activator.CreateInstance(parameter.ParameterType);
             }
 
             return hasDefaultValue;
