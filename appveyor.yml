@@ -36,6 +36,6 @@ deploy:
   - provider: NuGet
     artifact: /NuGet/
     api_key:
-      secure: 2cDyA+zST2lq+asKI/2sVqDE1suWvRBf+Uqm4Ipc2C4R0kbNhPXbZHBrRCqv10mP
+      secure: J2koBnucv1R/eU1A9kZr0wtqQVIRyCjd3Kk4IFk3MK5FNMxTilk3NB8dj3/KOZ2S
     on:
       branch: master
