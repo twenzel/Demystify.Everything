@@ -1,5 +1,5 @@
 image: Visual Studio 2017
-version: 0.1.{build}
+version: 1.0.{build}
 
 branches:
   only:
@@ -13,7 +13,7 @@ skip_commits:
 
 install:
    # .NET Core SDK binaries
-  - ps: $urlCurrent = "https://aka.ms/dotnet-sdk-2.0.0-win-x64"
+  - ps: $urlCurrent = "https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.1.500-windows-x64-binaries"
   - ps: $env:DOTNET_INSTALL_DIR = "$pwd\.dotnetsdk"
   - ps: mkdir $env:DOTNET_INSTALL_DIR -Force | Out-Null
   - ps: $tempFileCurrent = [System.IO.Path]::GetTempFileName()
