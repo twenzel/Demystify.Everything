@@ -28,6 +28,11 @@ namespace codeessentials.AspNetCore.Diagnostics.Demystifier
             }
             catch (Exception ex)
             {
+                if (context.Response.HasStarted)
+                {
+                    throw;
+                }
+                
                 Exception exception = null;
                 try
                 {
