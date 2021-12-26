@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreDemystifyExceptions", "samples\ASPCoreDemystifyExceptions\ASPCoreDemystifyExceptions.csproj", "{39B1444E-C506-49EA-B38B-C9B9E6CDF1C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETDemystifyExceptions", "samples\ASPNETDemystifyExceptions\ASPNETDemystifyExceptions.csproj", "{39B1444E-C506-49EA-B38B-C9B9E6CDF1C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "codeessentials.AspNetCore.Diagnostics.Demystifier", "src\codeessentials.AspNetCore.Diagnostics.Demystifier\codeessentials.AspNetCore.Diagnostics.Demystifier.csproj", "{8B020EEE-CED1-4B1D-B9C9-CD9B04B18E7D}"
 EndProject

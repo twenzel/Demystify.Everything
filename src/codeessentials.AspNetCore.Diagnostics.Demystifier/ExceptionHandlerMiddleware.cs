@@ -44,10 +44,11 @@ namespace codeessentials.AspNetCore.Diagnostics.Demystifier
                     exception = null;
                 }
 
-                if (exception != null)
+                if (exception != null) {
                     ExceptionDispatchInfo.Capture(exception).Throw();
-                else
+                } else {
                     throw; // re -throw the original exception
+                }
             }
         }
     }
