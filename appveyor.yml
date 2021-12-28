@@ -1,5 +1,5 @@
 image: Visual Studio 2022
-version: 1.0.{build}
+version: 1.1.{build}
 
 branches:
   only:
@@ -10,16 +10,6 @@ skip_commits:
   files:
   - LICENCE
   - README.md  
-
-install:
-   # .NET Core SDK binaries
-  - ps: $urlCurrent = "https://aka.ms/dotnet-sdk-2.0.0-win-x64"
-  - ps: $env:DOTNET_INSTALL_DIR = "$pwd\.dotnetsdk"
-  - ps: mkdir $env:DOTNET_INSTALL_DIR -Force | Out-Null
-  - ps: $tempFileCurrent = [System.IO.Path]::GetTempFileName()
-  - ps: (New-Object System.Net.WebClient).DownloadFile($urlCurrent, $tempFileCurrent)
-  - ps: Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::ExtractToDirectory($tempFileCurrent, $env:DOTNET_INSTALL_DIR)
-  - ps: $env:Path = "$env:DOTNET_INSTALL_DIR;$env:Path"
 
 build_script:
   - dotnet restore -v quiet
@@ -36,6 +26,6 @@ deploy:
   - provider: NuGet
     artifact: /NuGet/
     api_key:
-      secure: J2koBnucv1R/eU1A9kZr0wtqQVIRyCjd3Kk4IFk3MK5FNMxTilk3NB8dj3/KOZ2S
+      secure: 6NjBRsndf0ha9HFYZbte58xIiQk0c4VfcRA0APzWRZ7qOV0spREw62FYgSYXa1m0
     on:
       branch: master

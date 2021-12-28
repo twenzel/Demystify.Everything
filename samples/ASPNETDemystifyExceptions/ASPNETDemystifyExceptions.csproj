@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\codeessentials.AspNetCore.Diagnostics.Demystifier\codeessentials.AspNetCore.Diagnostics.Demystifier.csproj" />
     <ProjectReference Include="..\..\src\codeessentials.Extensions.Logging.Demystifier\codeessentials.Extensions.Logging.Demystifier.csproj" />
   </ItemGroup>
