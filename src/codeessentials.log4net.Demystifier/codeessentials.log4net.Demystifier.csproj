@@ -11,7 +11,7 @@
     <PackageId>codeessentials.log4net.Demystifier</PackageId>
     <Product>codeessentials.log4net.Demystifier</Product>
     <PackageProjectUrl>https://github.com/twenzel/Demystify.Everything</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/twenzel/Demystify.Everything/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/twenzel/Demystify.Everything/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/twenzel/Demystify.Everything</RepositoryUrl>
     
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
