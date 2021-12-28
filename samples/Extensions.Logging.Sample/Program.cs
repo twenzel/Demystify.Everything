@@ -1,18 +1,26 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using codeessentials.Extensions.Logging.Demystifier;
+using Microsoft.Extensions.Hosting;
 
 namespace Extensions.Logging.Sample
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var factory = new LoggerFactory().DemystifyExceptions();
-            factory.AddConsole();
+            using IHost host = Host.CreateDefaultBuilder(args)
+                .ConfigureLogging((context, builder) =>
+                {
+                    builder.AddExceptionDemystifyer();
+                })
+                .ConfigureServices((hbc, isc) =>
+                {
+                    // Add your services here
+                })
+                .Build();
 
-            var logger = factory.CreateLogger("Test");
+            var logger = host.Services.GetRequiredService<ILogger<Program>>();
 
             try
             {
@@ -24,7 +32,5 @@ namespace Extensions.Logging.Sample
 
             Console.ReadKey();
         }
-
-
     }
 }
